@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root{
+    --primary-color: hsl(233, 13%, 49%);
+    --secondary-color: hsl(240, 78%, 98%);
+    --light-primary: hsl(234, 14%, 74%);
+    --dark-primary: hsl(232, 13%, 33%);
+    --background-one: hsl(237, 63%, 64%);
+    --background-two: hsl(236, 72%, 79%);
+    --width-card-item: 300px;
+    --height-card-item: 400px;
+    font-size: 15px;
+}
+
+
+html, body, ul, ol, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    background: url('../images/bg-bottom.svg') no-repeat  bottom left, url('../images/bg-top.svg') no-repeat  top right var(--secondary-color);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;  
+    font-family: 'Montserrat', sans-serif;
+    color: var(--light-primary);
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+section{
+    width: 100%;
+    padding: 60px 60px 30px 60px;
+    box-sizing: border-box;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+}
+
+.myButton{
+    width: 60px;
+    height: 35px;
+    border-radius: 20px;
+    background-image: linear-gradient(-45deg, var(--background-one) -20%, var(--background-two));
+    position: relative;
+    bottom: 10px;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+}
+
+.ball{
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    transition: transform .3s linear;
+}
+
+#btn-checkbox{
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#btn-checkbox:checked + .myButton .ball{
+    transform: translateX(35px);
+}
+
+section h1{
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.flex-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item{
+    min-width: var(--width-card-item);
+    margin: 10px 0px;
+    background-color: white;
+    height: var(--height-card-item);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 0px;
+    color: var(--primary-color);
+}
+
+.flex-item:nth-child(2){
+    background-image: linear-gradient(-45deg, var(--background-one) -20%, var(--background-two));
+    color: white;
+    transform: scale(1.05);
+}
+
+.flex-item:nth-child(2) .price{
+    color: white;
+}
+
+.information{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flex-item .information span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item .information span:not(.price){
+    border-bottom: 1px solid var(--light-primary);
+    width: 80%;
+    text-align: center;
+    height: 50px;
+}
+
+.flex-item .information span:nth-child(1){
+    border-top: 1px solid var(--light-primary);
+}
+
+.btn{
+    width: 80%;
+    height: 45px;
+    background-image: linear-gradient(-45deg, var(--background-one) -20%, var(--background-two));
+    border: none;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform .3s linear;
+    outline: none;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.flex-item:nth-child(2) .btn{
+    background-image: none;
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.price{
+    font-size: 4rem;
+    color: rgb(78, 78, 78);
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 340px){
+    .flex-item{
+        min-width: 260px;
+    }
+}
+
